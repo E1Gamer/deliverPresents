@@ -1,10 +1,16 @@
 function deliverPresents(houses) {
-  // Base case
-  console.log('Delivering presents to ' + houses[0])
 
-  // Break the problem down into smaller piece(s)
+  if (houses.length === 1) {
+    console.log('Delivering presents to ' + houses[0])
+  } else {
+    var slice = (parseInt(houses.length)) / 2
+    var firstSlice = houses.slice(0, slice)
+    var secondSlice = houses.slice(slice)
 
-  // Recall the function on the smaller piece(s)
+    deliverPresents(firstSlice)
+    deliverPresents(secondSlice)
+  }
 }
+
 
 module.exports = deliverPresents
